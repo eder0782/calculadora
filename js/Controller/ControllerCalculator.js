@@ -204,6 +204,11 @@ class ControllerCalculator{
                     case "-":
                     case "×":
                     case "÷":
+                        if(this._resultado==true){
+                            this._resultado=false;
+                        }
+                        this.addLista(valor);
+                        break;
                     case "1":
                     case "2":
                     case "3":
