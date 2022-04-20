@@ -133,7 +133,7 @@ class ControllerCalculator{
         if(window.screen.availWidth<=450){
             //SE FOR MENOR QUE 450 PX, MOTRA 18 CARACTERES
             if(valor.length>18){
-                return valor.slice(0,18);
+                return valor.slice(0,17);
              }
         }
         else{
