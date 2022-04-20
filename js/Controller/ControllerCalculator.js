@@ -117,8 +117,34 @@ class ControllerCalculator{
 
         this._listaElementos= array;
         //console.log(this._listaElementos);
+        console.log(this._listaElementos[0]);
+        console.log(this._listaElementos[0].length);
+        
+        this._listaElementos[0]= this.roundNumber(this._listaElementos[0]);
+       
         this._resultado=true;
         this.addDisplay();
+
+    }
+
+    roundNumber(valor){
+        //VERIFICA O TAMANHO DA TELA PARA AJUSTAR A QUANTIDADE DE NUMEROS MOSTRADA NO RESULTADO
+
+        if(window.screen.availWidth<=450){
+            //SE FOR MENOR QUE 450 PX, MOTRA 18 CARACTERES
+            if(valor.length>18){
+                return valor.slice(0,18);
+             }
+        }
+        else{
+            //SE FOR MAIOR MOSTRA 14 CARACTERES
+            if(valor.length>15){
+                return valor.slice(0,14);
+             }
+        }
+
+        return valor;
+        
 
     }
     inverter(){
@@ -133,7 +159,11 @@ class ControllerCalculator{
 
         }
         if(this.ultimoElementoLista()!="0"){
+            
             this._listaElementos[this._listaElementos.length-1]= (1/this.ultimoElementoLista()).toString();
+            if(this._listaElementos.length<=1 ){
+                this._listaElementos[0]= this.roundNumber(this._listaElementos[0]);
+            }
         }
         
         this.addDisplay();
@@ -155,7 +185,7 @@ class ControllerCalculator{
         this._display.innerHTML = this._listaElementos.join('');
         //ROLANDO A TELA ATÉ O ULTIMO ELEMENTO DIGITADO NO DISPLAY
         this._display.scrollBy(100,0);
-        console.log(this._listaElementos);
+       // console.log(this._listaElementos);
     }
     addLista(valor){
         //SE FOR UM OPERADOR
