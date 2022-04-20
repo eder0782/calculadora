@@ -15,6 +15,23 @@ div.calculadora{
     user-select: none;
 }
 
+div.calculadora2{
+    width: 250px;
+    margin: auto;
+    background-color: blue;
+    padding: 15px;
+    padding-top: 0;
+    border-radius: 15px;
+    box-shadow: #00000094 0px 2px 3px 2px;
+    font-family: fantasy;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
 div.topo{
     text-align: center;
     height: 45px;
@@ -98,6 +115,7 @@ td:active{
     div.calculadora{
         width: 20em;
         height: 39em;
+
     }
     div.display{
         width: 21em;
@@ -106,5 +124,8 @@ td:active{
     td{
         width: 3em;
         height: 3em;
+    }
+    span.data, span.hora{
+        font-size: 1.25em;
     }
 }

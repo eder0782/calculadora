@@ -7,6 +7,7 @@ class ControllerCalculator{
         this.adicionarElementos();
         this.initialize();
         this._resultado=false;
+        this.changeColor();
 
 
     }
@@ -17,7 +18,24 @@ class ControllerCalculator{
         },1000)
 
     }
-
+    changeColor(){
+        document.getElementById("logo").addEventListener("click",()=>{
+            
+            let skyn= document.getElementById("calc");
+            //console.log(skyn.innerHTML);
+            if(skyn.className=="calculadora calculadora2"){
+                skyn.className="calculadora";
+            }
+            else
+                skyn.className="calculadora calculadora2";
+            //console.log(skyn.style.backgroundcolor);
+           
+           /* if(skyn.style.backgroundColor=="#011017")
+                skyn.style.backgroundColor="blue";
+            else
+                skyn.style.backgroundColor="#011017";*/
+        })
+    }
     limpar(){
         /*while(this._listaElementos.length){
             this._listaElementos.pop()
